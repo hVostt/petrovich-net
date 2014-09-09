@@ -5,16 +5,23 @@ NPetrovich is library which inflects Russian names to given grammatical case. It
 
 NPetrovich is C#/.NET implementation of [Petrovich](https://github.com/rocsci/petrovich) ruby gem.
 
+[![Build status](https://ci.appveyor.com/api/projects/status/ieqcivsb3cxghx2a)](https://ci.appveyor.com/project/VitaliFokin/petrovich-net)
+
 ## Installation
 
-Just reference NPetrovich dll to your project.
-You also need to copy `rules.yml` to folder with NPetrovich dll.
+NuGet
 
-PS. Nuget package coming soon
+```
+PM> Install-Package NPetrovich
+```
+
+Manual
+
+Just reference NPetrovich dll to your project.
 
 ## Building
 
-Run `build.ps1` script with Powershell to build solution. You can find output binaries in the `bin` directory.
+Run `psake.ps1` script with Powershell to build solution. You can find output binaries in the `bin` directory.
 
 ## Usage
 
@@ -75,7 +82,7 @@ System.Console.WriteLine(gender); // Male
 You can use your own rules loeder which implements IRulesLoader interface:
 
 ```csharp
-IRulesLoader customLoader = new CustomRulesLoader("CustomRulesFile.CustomExtension");
+IRulesLoader customLoader = new CustomRulesLoader();
 var petrovich = new Petrovich(customLoader);
 ```
 
@@ -93,5 +100,3 @@ You can also support project by reporting issues or suggesting new features and 
 
 * Add documentation
 * Add comments to the code
-* Nuget package
-* Add msbuild build scripts
